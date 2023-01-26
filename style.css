@@ -1,0 +1,165 @@
+/* The designs were created to the following widths:
+
+- Mobile: 375px
+- Desktop: 1440px
+
+*/
+
+:root {
+    --dark_cyan: hsl(158, 36%, 37%);
+    --cream: hsl(30, 38%, 92%);
+    --very_dark_blue: hsl(212, 21%, 14%);
+    --dark_grayish_blue: hsl(228, 12%, 48%);
+    --white: hsl(0, 0%, 100%);
+    --padding: 2rem;
+    --letter_margin: 1.5rem;
+    --head-size: 34px;
+}
+
+body {
+    font-family: 'Monserrat', sans-serif;
+    background-color: var(--cream);
+}
+
+section {
+    padding: 20vh 0;
+    display: flex;
+    justify-content: center;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+    margin: 0;
+}
+
+p {
+    font-size: 17px;
+}
+
+.card {
+    display: grid;
+    background-color: var(--white);
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+@media (max-width: 1429px) {
+    .card {
+        grid-template-columns: repeat(1, 1fr);
+        width: 23rem;
+    }
+
+    .card .card-image {
+        grid-row: 1;
+    }
+
+    .card .card-body {
+        grid-row: 2;
+        padding: var(--padding);
+    }
+
+    .img-lg {
+        display: none;
+    }
+
+    .img-sm {
+        display: revert;
+    }
+}
+
+@media (min-width: 1440px) {
+    .card {
+        grid-template-columns: repeat(2, 1fr);
+        width: 40rem;
+    }
+
+    .card .card-image {
+        grid-column: 1/2;
+        grid-row: 1;
+    }
+
+    .card .card-body {
+        grid-column: 2/2;
+        grid-row: 1;
+        margin: auto 0;
+        padding: 0 var(--padding);
+    }
+
+    .img-lg {
+        display: revert;
+    }
+
+    .img-sm {
+        display: none;
+    }
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+}
+
+
+.card-body .product-category {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: var(--dark_grayish_blue);
+    letter-spacing: 0.3rem;
+}
+
+.card-body h5 {
+    font-family: 'Fraunces', sans-serif;
+    font-size: var(--head-size);
+    color: var(--very_dark_blue);
+    line-height: 34px;
+    margin: var(--letter_margin) 0;
+}
+
+.card-body p {
+    color: var(--dark_grayish_blue);
+    margin-bottom: var(--letter_margin);
+}
+
+.card-body .product-price {
+    display: flex;
+    align-items: center;
+    gap: var(--letter_margin);
+    margin-bottom: var(--letter_margin);
+}
+
+.product-price h4 {
+    font-family: 'Fraunces', sans-serif;
+    font-size: var(--head-size);
+    color: var(--dark_cyan);
+}
+
+.product-price span {
+    color: var(--dark_grayish_blue);
+    text-decoration: line-through;
+}
+
+.btn-add {
+    border: none;
+    border-radius: 0.5rem;
+    transition: 1s;
+    cursor: pointer;
+    padding: 1rem;
+    width: 100%;
+    font-family: 'Monserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--white);
+    background-color: var(--dark_cyan);
+}
+
+.btn-add:hover {
+    background-color: var(--very_dark_blue);
+}
+
+.btn-add img {
+    margin-right: 0.5rem;
+}
